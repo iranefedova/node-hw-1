@@ -7,14 +7,11 @@ class Pokemon {
 
   show () {
     console.log(`Имя: ${this.name}, Уровень: ${this.level}`);
-    console.log("-----");
   }
 }
 
 let p = new Pokemon("Pikachu", 5);
 let s = new Pokemon("Slowpoke", 3);
-p.show();
-s.show();
 
 // 2, 5, 7
 class PokemonList extends Array {
@@ -23,7 +20,7 @@ class PokemonList extends Array {
   }
   show () {
     for (let i of this) {
-      console.log(`Имя: ${i.name}, Уровень: ${i.level}`);
+      i.show();
     }
     console.log("Количество покемонов: " + this.length);
     console.log("-----");
