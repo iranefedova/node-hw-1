@@ -32,6 +32,11 @@ describe('PokemonList', () => {
       PokeList = new PokemonList();
     });
 
+    it('проверка добавления', () => {
+      let len = PokeList.length;
+      PokeList.add('Bulbasaur', 5)
+      expect(PokeList.length).to.equal(len+1);
+    });
     it('проверка создания объекта', () => {
       expect(PokeList.add('Bulbasaur', 7)).is.instanceof(Pokemon);
     });
