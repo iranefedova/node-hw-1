@@ -27,12 +27,9 @@ class PokemonList extends Array {
   }
 
   max () {
-    let m = this[0];
-    for (let i of this) {
-      if (i.level > m.level) {
-        m = i;
-      }
-    }
+    let m = this.reduce((max, current) => {
+      return (current.level > max.level) ? current : max
+    });
     return m;
   }
 }
