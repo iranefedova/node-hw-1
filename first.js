@@ -1,40 +1,12 @@
+const PokemonList = require('./PokemonList').PokemonList;
+const Pokemon = require('./Pokemon').Pokemon;
+
 // 1
-class Pokemon {
-  constructor (name, level) {
-    this.name = name;
-    this.level = level;
-  }
-
-  show () {
-    console.log(`Имя: ${this.name}, Уровень: ${this.level}`);
-  }
-}
-
-let p = new Pokemon("Pikachu", 5);
-let s = new Pokemon("Slowpoke", 3);
+let Pikachu = new Pokemon("Pikachu", 5);
+let Slowpoke = new Pokemon("Slowpoke", 3);
 
 // 2, 5, 7
-class PokemonList extends Array {
-  add (name, level) {
-    this.push(new Pokemon(name, level));
-  }
-  show () {
-    for (let i of this) {
-      i.show();
-    }
-    console.log("Количество покемонов: " + this.length);
-    console.log("-----");
-  }
-
-  max () {
-    let m = this.reduce((max, current) => {
-      return (current.level > max.level) ? current : max
-    });
-    return m;
-  }
-}
-
-let plist = new PokemonList(p, s);
+let plist = new PokemonList(Pikachu, Slowpoke);
 plist.add("Bulbasaur", 7);
 
 // 3
